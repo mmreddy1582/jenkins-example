@@ -4,6 +4,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-2757f631"
+  ami           = "ami-021acbdb89706aa89"
   instance_type = "t2.micro"
+  count = 2 # create four similar EC2 instances
+  tags = {
+    Name = "Server ${count.index}"
+  }
 }
