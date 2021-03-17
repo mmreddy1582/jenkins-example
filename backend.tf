@@ -6,3 +6,10 @@ terraform {
   }
   
 }
+
+
+
+            PwdValidator target = new PwdValidator();
+            bool actual, expected = true;
+            actual = target.PasswdValidation("p2ssw0rd");
+            Assert.AreEqual(expected, actual);
